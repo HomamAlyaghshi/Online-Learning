@@ -1,7 +1,11 @@
+import HeroSection from "./components/HeroSection";
+
 function App() {
   return (
-    <div>
-      <h1 className="font-primary text-primary">Hello</h1>
+    <div className="w-full h-full">
+      <HeroSection />
+
+      
     </div>
   );
 }
