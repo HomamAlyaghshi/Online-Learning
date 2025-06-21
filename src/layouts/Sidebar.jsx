@@ -1,15 +1,49 @@
-// src/layouts/Sidebar.jsx
-
-import React from 'react';
 
 const Sidebar = () => {
+  const adminInfo = {
+    name: 'د. أحمد السعيد',
+    role: 'مدير الصيدلية',
+    description: 'خبير في إدارة المخزون وتحسين المبيعات.',
+    avatar: 'https://via.placeholder.com/150/1A4D2E/FFFFFF?text=AS', 
+   
+  };
+
+
+  const pharmacyLogoPath = '/pharmacy_logo.png';
+
   return (
     <div className="w-64 bg-primary text-textLight flex flex-col p-6 shadow-lg">
-      {/* شعار الصيدلية أو اسم لوحة التحكم */}
-      <div className="mb-8">
-        <h1 className="text-3xl font-primary text-accent text-center">
+      {/* شعار الصيدلية */}
+      <div className="mb-8 text-center">
+        {/* إذا كان لديك ملف شعار حقيقي */}
+        <img
+          src={pharmacyLogoPath}
+          alt="شعار الصيدلية"
+          className="h-20 mx-auto mb-4 object-contain" 
+        />
+        {/* إذا لم يكن لديك شعار، يمكنك إبقاء النص البديل أو أيقونة */}
+        <h1 className="text-3xl font-primary text-accent">
           لوحة تحكم الصيدلية
         </h1>
+      </div>
+
+      {/* معلومات المدير الحالي */}
+      <div className="mb-8 p-4 bg-secondary rounded-lg text-center">
+        {/* صورة رمزية للمدير أو أيقونة */}
+        <img
+          src={adminInfo.avatar}
+          alt={adminInfo.name}
+          className="w-16 h-16 rounded-full mx-auto mb-3 border-2 border-accent" // صورة دائرية مع حدود
+        />
+        <h3 className="text-xl font-bold text-accent mb-1">
+          {adminInfo.name}
+        </h3>
+        <p className="text-sm text-textLight opacity-90 mb-2">
+          {adminInfo.role}
+        </p>
+        <p className="text-xs text-textLight opacity-70 italic">
+          "{adminInfo.description}"
+        </p>
       </div>
 
       {/* روابط التنقل */}
@@ -17,11 +51,10 @@ const Sidebar = () => {
         <ul>
           <li className="mb-4">
             <a
-              href="/" // سنستخدم React Router Dom لاحقًا
+              href="/"
               className="flex items-center p-3 rounded-lg text-lg hover:bg-secondary transition-colors duration-200"
             >
-              {/* أيقونة لوحة التحكم */}
-              <span className="mr-3">📊</span>
+              <span className="ms-3 text-2xl">📊</span> {/* ms-3 for margin start (left in RTL) */}
               نظرة عامة
             </a>
           </li>
@@ -30,8 +63,7 @@ const Sidebar = () => {
               href="/"
               className="flex items-center p-3 rounded-lg text-lg hover:bg-secondary transition-colors duration-200"
             >
-              {/* أيقونة المنتجات */}
-              <span className="mr-3">💊</span>
+              <span className="ms-3 text-2xl">💊</span>
               المنتجات
             </a>
           </li>
@@ -40,8 +72,7 @@ const Sidebar = () => {
               href="/"
               className="flex items-center p-3 rounded-lg text-lg hover:bg-secondary transition-colors duration-200"
             >
-              {/* أيقونة المخزون */}
-              <span className="mr-3">📦</span>
+              <span className="ms-3 text-2xl">📦</span>
               المخزون
             </a>
           </li>
@@ -50,8 +81,7 @@ const Sidebar = () => {
               href="/"
               className="flex items-center p-3 rounded-lg text-lg hover:bg-secondary transition-colors duration-200"
             >
-              {/* أيقونة المبيعات */}
-              <span className="mr-3">💰</span>
+              <span className="ms-3 text-2xl">💰</span>
               المبيعات
             </a>
           </li>
