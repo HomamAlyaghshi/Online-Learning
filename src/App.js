@@ -1,8 +1,11 @@
+import DashboardLayout from "./layouts/DashboardLayout";
+import Dashboard from "./pages/Dashboard";
+
 function App() {
   return (
-    <div className="w-full h-full bg-primary font-primary text-secondary text-4xl">
-      hello
-    </div>
+    <DashboardLayout>
+      <Dashboard />
+    </DashboardLayout>
   );
 }
 
