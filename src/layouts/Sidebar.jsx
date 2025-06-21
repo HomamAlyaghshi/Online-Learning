@@ -60,7 +60,7 @@ const Sidebar = () => {
           </li>
           <li className="mb-4">
             <a
-              href="/"
+              href="/products"
               className="flex items-center p-3 rounded-lg text-lg hover:bg-secondary transition-colors duration-200"
             >
               <span className="ms-3 text-2xl">💊</span>
