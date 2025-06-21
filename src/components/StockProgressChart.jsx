@@ -50,9 +50,9 @@ const StockProgressChart = ({ currentStock, maxCapacity }) => {
           </PieChart>
         </ResponsiveContainer>
       </div>
-      <p className="text-lg text-textDark mt-4">
-        المخزون الحالي: **{currentStock}** من **{maxCapacity}** وحدة.
-      </p>
+     <p className="text-base font-semibold">
+          المخزون الحالي: <span className="font-bold text-lg">{currentStock}</span> من <span className="font-bold text-lg">{maxCapacity}</span> وحدة.
+        </p>
     </div>
   );
 };
