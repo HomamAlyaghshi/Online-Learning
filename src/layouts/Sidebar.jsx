@@ -4,12 +4,12 @@ const Sidebar = () => {
     name: 'د. أحمد السعيد',
     role: 'مدير الصيدلية',
     description: 'خبير في إدارة المخزون وتحسين المبيعات.',
-    avatar: 'https://via.placeholder.com/150/1A4D2E/FFFFFF?text=AS', 
+    avatar: '/images/admin.jpg', 
    
   };
 
 
-  const pharmacyLogoPath = '/pharmacy_logo.png';
+  const pharmacyLogoPath = '/images/logo.png';
 
   return (
     <div className="w-64 bg-primary text-textLight flex flex-col p-6 shadow-lg">
