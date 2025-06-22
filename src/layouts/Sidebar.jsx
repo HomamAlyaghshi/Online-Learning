@@ -1,7 +1,7 @@
 
 const Sidebar = () => {
   const adminInfo = {
-    name: 'د. أحمد السعيد',
+    name: 'د.همام اليغشي',
     role: 'مدير الصيدلية',
     description: 'خبير في إدارة المخزون وتحسين المبيعات.',
     avatar: '/images/admin.jpg', 
