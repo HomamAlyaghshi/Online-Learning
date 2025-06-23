@@ -4,14 +4,12 @@ import React, { createContext, useState, useEffect, useContext } from 'react';
 import moment from 'moment';
 import 'moment/locale/ar';
 
-moment.locale('ar'); // تعيين اللغة العربية لـ Moment.js هنا لمرة واحدة
+moment.locale('ar');
 
 export const DataContext = createContext();
 
 export const DataProvider = ({ children }) => {
-  // ----------------------------------------------------
-  // أ. البيانات الوهمية المركزية
-  // ----------------------------------------------------
+
 
   // بيانات بطاقات لوحة التحكم
   const [dashboardCardsData, setDashboardCardsData] = useState([

@@ -9,23 +9,8 @@ const Products = () => {
   return (
     <div className="space-y-8">
       {/* قسم ترحيبي أو عنوان الصفحة */}
-      <div className="bg-white p-6 rounded-lg shadow-md">
-        <h1 className="text-3xl font-bold text-primary mb-2">
-          إدارة المنتجات
-        </h1>
-        <p className="text-lg text-textDark">
-          عرض، إضافة، تعديل، وحذف المنتجات في مخزون الصيدلية.
-        </p>
-      </div>
 
-      {/* قسم البحث والتصفية (سنضيفه لاحقًا) */}
-      <div className="bg-white p-6 rounded-lg shadow-md">
-        <h2 className="text-2xl font-bold text-primary mb-4">
-          البحث والتصفية
-        </h2>
-        {/* سيتم هنا إضافة شريط البحث وخيارات التصفية */}
-        <p className="text-textDark">مكان لأدوات البحث والتصفية.</p>
-      </div>
+
 
       {/* جدول عرض المنتجات */}
       <div className="bg-white p-6 rounded-lg shadow-md">
