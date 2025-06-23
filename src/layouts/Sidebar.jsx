@@ -67,15 +67,7 @@ const Sidebar = () => {
               المنتجات
             </a>
           </li>
-          <li className="mb-4">
-            <a
-              href="/"
-              className="flex items-center p-3 rounded-lg text-lg hover:bg-secondary transition-colors duration-200"
-            >
-              <span className="ms-3 text-2xl">📦</span>
-              المخزون
-            </a>
-          </li>
+     
           <li className="mb-4">
             <a
               href="/"

@@ -41,12 +41,19 @@ export const DataProvider = ({ children }) => {
   const [maxStockCapacity, setMaxStockCapacity] = useState(1000);
 
   // بيانات المنتجات
-  const [products, setProducts] = useState([
+ const [products, setProducts] = useState(() => {
+  const storedProducts = localStorage.getItem('products');
+  return storedProducts ? JSON.parse(storedProducts) : [
     { id: 1, name: 'بنادول', category: 'مسكنات الألم', stock: 150, price: 15.50, expiryDate: '2026-12-31' },
     { id: 2, name: 'فيتامين د', category: 'فيتامينات', stock: 20, price: 30.00, expiryDate: '2025-07-15' },
     { id: 3, name: 'مضاد حيوي أ', category: 'مضادات حيوية', stock: 80, price: 55.75, expiryDate: '2025-06-20' },
     { id: 4, name: 'شراب الكحة', category: 'أدوية سعال', stock: 60, price: 22.00, expiryDate: '2027-03-10' },
-  ]);
+  ];
+});
+//مشان يبقى عندي تخزين للادوية دائما عند الاضافة من الواجهة
+useEffect(() => {
+  localStorage.setItem('products', JSON.stringify(products));
+}, [products]);
 
   // ----------------------------------------------------
   // إضافة بيانات التنبيهات هنا
@@ -65,6 +72,13 @@ export const DataProvider = ({ children }) => {
   // ----------------------------------------------------
   // ب. الدوال التي ستعدل البيانات (أمثلة)
   // ----------------------------------------------------
+
+  //دالة مشان تضيف منتج جديد
+  const addProduct = (newProduct) => {
+  setProducts(prevProducts => [...prevProducts, { ...newProduct, id: Date.now() }]);
+  addAlert({ type: 'success', message: `تمت إضافة ${newProduct.name} بنجاح.` });
+};
+
 
   const deleteProduct = (id) => {
     setProducts(prevProducts => prevProducts.filter(product => product.id !== id));
@@ -97,7 +111,7 @@ export const DataProvider = ({ children }) => {
     // بيانات المنتجات
     products,
     // بيانات التنبيهات
-    alerts, // أضف التنبيهات هنا
+    alerts, 
     // الدوال التي ستسمح بتعديل البيانات
     setDashboardCardsData,
     setRecentSalesData,
@@ -107,8 +121,10 @@ export const DataProvider = ({ children }) => {
     setProducts,
     deleteProduct,
     updateStock,
-    addAlert,    // أضف دالة إضافة التنبيه
-    removeAlert, // أضف دالة حذف التنبيه
+    addAlert,   
+    removeAlert, 
+    addProduct, // دالة الاضافة
+
   };
 
   return (
