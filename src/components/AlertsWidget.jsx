@@ -71,6 +71,7 @@ const AlertsWidget = ({ alerts }) => { // الآن AlertsWidget يستقبل "al
           ))
         ) : (
           <p className="text-textDark text-center p-4">لا توجد تنبيهات جديدة حاليًا.</p>
+          
         )}
       </div>
     </div>
